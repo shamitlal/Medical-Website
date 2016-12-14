@@ -1,0 +1,32 @@
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      height: 380px;
+      margin: auto;
+}
+.arrow
+{
+    z-index: 1 !important;
+    position: absolute;
+    top: 458;
+    left: 50%;
+    width: 72px;
+    height: 36px;
+    margin-left: -36px;
+    background: url("sprite.png") no-repeat;
+    background-position :-727px -3812px;
+}
+.bottom
+{
+    border-bottom: 5px solid #e67300;
+}
+.bg1
+{
+    background-image: url('3.png') !important;
+    opacity: 40 !important;
+}
+.bg2
+{
+    background-image: url('4.png') !important;
+    opacity: 40 !important;
+}

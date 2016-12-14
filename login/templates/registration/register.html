@@ -1,0 +1,199 @@
+<html>
+<head>
+<title>Sign Up</title>
+
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'login/bootstrap-3.3.6-dist/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'login/css/tuts.css' %}">
+<link rel="stylesheet" href="{% static 'login/css/signup.css' %}">
+<link rel="stylesheet" href="{% static 'offcanvas.css' %}">
+<script src="{% static 'login/bootstrap-3.3.6-dist/js/jquery-2.2.0.min.js' %}"></script>
+<script src="{% static 'login/bootstrap-3.3.6-dist/js/bootstrap.min.js' %}"></script>
+<link rel="stylesheet" href="{% static 'login/css1/footer-distributed-with-address-and-phones.css' %}">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">  
+<link type="text/css" rel="stylesheet" href="{% static 'login/css/materialize.min.css' %}"  media="screen,projection"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <script type="text/javascript" src="{% static 'login/js/materialize.min.js' %}"></script>
+<script>
+ function myFunction() {
+    var pass1 = document.getElementById("pass1").value;
+    var pass2 = document.getElementById("pass2").value;
+    var ok = true;
+    if (pass1 != pass2) {
+        alert("Passwords Do not match");
+        document.getElementById("pass1").style.borderColor = "#E34234";
+        document.getElementById("pass2").style.borderColor = "#E34234";
+        ok = false;
+    }
+    return ok;
+}
+ $(document).ready(function() {
+    $('input#pass1, input#pass2').characterCounter();
+  });
+ 
+ 
+</script>
+</head>
+ 
+ 
+ 
+<body background="img/bg1.jpg">
+    <div class="row">
+  <nav class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/medworld/">MedWorld</a>
+        </div>
+        
+      <form class="navbar-form navbar-right" action="." method="post"> {% csrf_token %}
+            <div class="form-group">
+              <input type="text" name="user" placeholder="Username" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" name="pass" placeholder="Password" class="form-control">
+        </div>
+            <button type="submit" name="signin" class="btn btn-success">Sign in</button>
+          </form>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </nav><!-- /.navbar -->
+  
+
+<!-- Grid -->
+{% if msg  %}
+<script> alert('Credentials supplied are not valid. Fill the information again') </script>
+{% endif %}
+<div class="row">
+<div class="row"></div>
+  <div class="col-lg-1"><br/><br/><br/><br/>
+</div>
+ <div class="col-lg-10" style="box-shadow:10px 0px 50px -2px rgba(0,0,0,1);">
+  <br/>
+  <div class="row"></div>
+  <br>
+ <!-- <img class ="mainimage" src ="img/tut1.jpg"><br/><br/><br/>-->
+ 
+ <div class="hit-the-floor">Sign Up</div>
+ <div class="row">
+    <form class="col s12" action="." onsubmit="return myFunction()" method="post">  {% csrf_token %}<!--  ADD NAME OF THE FILE WHERE FORM IS REDIRECTED-->
+      <div class="row">
+        <div class="input-field col s6">
+         <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" name = "username" type="text" class="validate" required="required">
+          <label for="icon_prefix">User Name</label>
+
+        </div>
+      </div>
+      
+     
+      <div class="row">
+        <div class="input-field col s12">
+          
+          <i class="material-icons prefix">email</i>
+          <input id="email" name="email" type="email" class="validate" required="required">
+      <label for="email" data-error="Enter the correct email format" data-success="Right">Email</label>
+        
+        </div>
+      </div>
+     <div class="row">
+        <div class="input-field col s6">
+          
+          <i class="material-icons prefix">stars</i>
+          <input id="pass1" name="password1" type="password" class="validate" length="20" required="required" minlength="6">
+      <label for="password">Password</label>
+        </div>
+
+    <div class="input-field col s6">
+          <i class="material-icons prefix">stars</i>
+          <input id="pass1" name="password2" type="password" class="validate" length="20" required="required" minlength="6">
+      <label for="password">Password</label>
+        </div>
+        </div>
+    
+    
+    
+    <div class="row">
+    <div class="input-field col s12"><center>
+    <button class="btn waves-effect waves-light" type="submit" name="signup" value="Register" name="action">Submit
+    <i class="material-icons right">send</i></center>
+    </button>
+    </div>
+    </div>
+    </form>
+  </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+<div class="col-lg-1">
+      <br><br><br>    
+     </div>
+   
+   </div>
+    <!-- Footer -->
+   <footer class="footer-distributed">
+
+      <div class="footer-left">
+
+        <h3>Med<span>World</span></h3>
+
+        <p class="footer-links">
+          <a href="index11.html">Home</a>
+          
+          <a href="aboutUs.html">About</a>
+          
+          <a href="contact.html">Contact</a>
+        </p>
+
+        <p class="footer-company-name">MedWorld <br>&copy; Shamit Lal, Shivam Duggal, Rohit Sharma 2016</p>
+      </div>
+    <div class="footer-center">
+
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>Delhi Technological University</span> Delhi, India</p>
+        </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+91 9717127722</p>
+        </div>
+
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:support@company.com">supportmedworld@gmail.com</a></p>
+        </div>
+
+    </div>
+    <div class="footer-right">
+
+        <p class="footer-company-about">
+          <span>Reach Us</span>
+          
+        </p>
+
+        <div class="footer-icons">
+
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-github"></i></a>
+
+        </div>
+
+    </div>
+    </footer><!-- End Footer -->
+
+</body>
+</html>

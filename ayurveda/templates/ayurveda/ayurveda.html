@@ -1,0 +1,322 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <title>MedWorld</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="{% static 'ayurveda/css/bootstrap.css' %}" rel="stylesheet">
+    
+    <!--Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Belgrano|Courgette&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    
+    <!--Bootshape-->
+    <link href="{% static 'ayurveda/css/bootshape.css' %}" rel="stylesheet">
+    <link href="{% static 'ayurveda/css/about.css' %}" rel="stylesheet">
+    <link href="{% static 'ayurveda/css/diseases.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'ayurveda/cssmg13/footer-distributed-with-address-and-phones.css' %}">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+<style>
+.stylish-row{
+  font-family: "Times New Roman";
+  font-size: 50px;
+  color : black;
+
+
+}
+.black{
+    color: black;
+  }
+  .img-circle {
+    border-radius: 50%;
+}
+.sd{
+  font-weight: normal;
+}
+
+.leaf{
+  background: url({% static 'ayurveda/img/leaf1.jpg' %});
+  background-repeat: no-repeat;
+  background-size: cover;
+}  
+</style>
+
+  </head>
+  <body>
+   <!-- Navigation bar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/medworld/">MedWorld</a>
+        </div>
+        <nav role="navigation" class="collapse navbar-collapse navbar-right">
+          <ul class="navbar-nav nav">
+
+            {% if user.is_authenticated %}
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Welcome {{ user.get_username }}<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="/register/logout/">Logout</a></li>
+             
+                <!--<li class="divider"></li>
+                <li><a href="#">All Items</a></li>-->
+              </ul>
+            </li>
+             
+            {% else %}
+              <li class=""><a href="/register/">Register / Login</a></li>
+            {% endif %} 
+
+
+            <li class="active"><a href="/medworld/">Home</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Healthcare Marketting <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="http://www.netmeds.com">Buy medicines</a></li>
+                <li><a href="http://alphanursing.com.au/book-a-nurse/">Book a nurse</a></li>
+                <li><a href="https://www.practo.com">Make a doctor appointment</a></li>
+                <!--<li class="divider"></li>
+                <li><a href="#">All Items</a></li>-->
+              </ul>
+            </li>
+            
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">General<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="/general/">News and Information</a></li>
+                <li><a href="/disease/">Diseases</a></li>
+                <li>
+                {% if user.is_authenticated %}
+                <a href="/video_chat/">Video Chat</a>
+                {% endif %}
+                <li>
+
+                <!--<li class="divider"></li>
+                <li><a href="#">All Items</a></li>-->
+              </ul>
+            </li>
+
+            <li><a href="/healthcare_media/">Healthcare Media</a></li>
+            <li><a href="/about_us/">About Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div><!-- End Navigation bar -->
+    <!-- Slide gallery -->
+    <div class="jumbotron" >
+      <div class="container" >
+        <div class="col-xs-12" >
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" align = "center">
+            <div class="item active" >
+              
+                <iframe width="700" height="350"  allowfullscreen="allowfullscreen"
+                  src="https://www.youtube.com/embed/v4Be2CoQnbc" >
+                </iframe>
+              
+            </div>
+            <div class="item">
+              <iframe width="700" height="350"  allowfullscreen="allowfullscreen"
+                  src="https://www.youtube.com/embed/M3u2tFYbdus" >
+              </iframe>
+            </div>
+            <div class="item">
+              <iframe width="700" height="350"  allowfullscreen="allowfullscreen"
+                  src="https://www.youtube.com/embed/LRiZUP9Hd_c" >
+              </iframe>
+            </div>
+          </div>
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </div>
+        </div>
+      </div><!-- End Slide gallery -->
+    </div>
+
+
+
+
+  <div class="row">
+    <font face = "Times New Roman" size = "4">
+    <div class="col-sm-1">      
+    </div>  
+      
+    <div class="col-sm-7"><br><br>
+
+       
+      <h1 align = "center">AYURVEDA</h1><br><br>
+    <div >Ayurveda is an ancient health care tradition that has been practiced in India for at least 5,000 years. The word comes from the Sanskrit terms ayur (life) and veda (knowledge).
+
+    Though Ayurveda, or Ayurvedic medicine, was documented in the sacred historical texts known as the Vedas many centuries ago, Ayurveda has evolved over the years and is now integrated with other traditional practices, including yoga.
+
+    Ayurveda is widely practiced on the Indian subcontinent : more than 90 percent of Indians use some form of Ayurvedic medicine, according to the University of Minnesota's Center for Spirituality and Healing  and the tradition has gained popularity in the Western world, though it's still considered an alternative medical treatment. 
+    
+    </div>
+    <b><i><h2 align = "center"><br><br>Principles of Ayurveda</h2></i></b>
+    <div ><font face = "Times New Roman" size = "4">
+    Health care is a highly individualized practice under Ayurvedic principles, which state that everyone has a specific constitution, or prakruti, that d
+    determines his or her physical, physiologic and mental character and disease vulnerability, according to Dr. Bala Manyam, a neurologist and professor emeritus 
+    at Southern Illinois University School of Medicine.
+    </font></div> 
+
+    <br><br>
+
+    <div class = "leaf">
+
+    <div class="row stylish-row">
+      <div class="col-sm-6 vertical line" ><br><br>
+      <b>
+      <h5><b><i><h3 class = "black" >Prakruti</h3></i></b><br>Prakruti is determined by three "bodily energies" called doshas, Manyam told Live Science. There are three basic doshas, and though everyone has some features of each, most people have one or two that predominate, according to the University of Maryland Medical Center:
+      </div></h5>
+
+      <div class="col-sm-6 vertical line" ><br><br>
+      <h5><b><i><h3 class = "black" >Pitta energy</h3></i></b><br>Pitta energy is linked to fire, and is thought to control the digestive and endocrine systems. People with pitta energy are considered fiery in temperament, intelligent and fast-paced. When pitta energy is out of balance, ulcers, inflammation, digestive problems, anger, heartburn and arthritis can result.
+      </div></h5>
+
+      </div>
+
+       
+    <div class="row stylish-row">
+      <div class="col-sm-6 vertical line" ><br><br>
+      <h5>
+      <b><i><h3 class = "black" >Kapha energy</h3></i></b><br>Kapha energy linked to earth and water, is believed to control growth and strength, and is associated with the chest, torso and back. Kapha types are considered strong and solid in constitution, and generally calm in nature. But obesity, diabetes, sinus problems, insecurity and gallbladder issues can result when kapha energy is out of balance, according to Ayurvedic practitioners.
+
+      </div></h5>
+
+      <div class="col-sm-6 vertical line" ><br><br>
+      <h5>
+      <b><i><h3 class = "black" >Vata energy</h3></i></b><br>Vatra energy is associated with air and space, and is linked to bodily movement, including breathing and blood circulation. Vata energy is said to predominate in people who are lively, creative, original thinkers. When out-of-balance, vata types can endure joint pain, constipation, dry skin, anxiety and other ailments.
+      
+      </div></h5>
+
+      </div>
+
+    </div>
+    </div>
+    
+
+     <div class="col-lg-3" >
+      <div class = "sd">
+        <br><br><br><br><br>
+      <br><br>
+        
+           
+             <ul> 
+              <li>
+                <img class = "img-circle" src = "http://sim02.in.com/84bb6c9581594ec1e08627b684ca5a70_t.jpg" align = "left" height = "130" width = "130" >
+                <b><u><a href="https://www.youtube.com/watch?v=uLE0WvWJ9q4"><font color = "black">SWAMI RAMDEV</a></u></b><br><br> Baba Ramdev is a yoga teacher known for his contributions in Ayurveda. He founded the Patanjali Group of Institutions.<br>
+                <br><br>
+              </li>
+              <li>
+                <img class = "img-circle" src = "https://yt3.ggpht.com/-lESonCqam9k/AAAAAAAAAAI/AAAAAAAAAAA/kmgQ5oPoWrk/s900-c-k-no-rj-c0xffffff/photo.jpg" align = "left" height = "130" width = "130" >
+                <b><u><a href="https://www.youtube.com/watch?v=Fh3nH2YuvuE"><font color = "black">ACHARYA BALKRISHNA</a></b></u> <br><br> Through the medium of Ayurveda Center of Patanjali Yogpeeth, Balkrishna has done work of carrying forward traditional Ayurvedic methods of India.Balkrishna is also working toward making people aware about yoga.<br>
+                <br><br>
+              </li>
+              
+              <li>
+                <img class = "img-circle" src = "https://jiva.com/images/drchauhan.jpg" align = "left" height = "130" width = "130" >
+                <b><u><a href="https://www.youtube.com/watch?v=FvxVVurs3_M"><font color = "black">DR. PRATAP CHAUHAN</a></b></u><br><br>Pratap Chauhan is an Indian Ayurvedic doctor and the pioneer of online Ayurvedic medicine.He is the founder of Jiva Ayurveda, an Ayurvedic company which offers online, telephonic and personal consultation to patients across the world. <br>
+                <br><br>
+              </li>
+
+              <li>
+                <img class = "img-circle" src = "http://www.blog.drvikram.com/wp-content/uploads/2015/07/dr-vikram-chauhan-283x300.jpg" align = "left" height = "130" width = "130" >
+                <b><u><a href = "https://www.youtube.com/watch?v=KUlV-LZNInE"><font color = "black">DR. VIKRAM CHAUHAN</a></b></u><br><br>Dr. Vikram Chauhan is one of the Best Ayurvedic Doctors in India. He is the Owner of Planet Ayurveda and Krishna Herbals Ayurvedic Companies.<br><br><br> 
+              </li>
+
+             </ul>
+          
+
+        </div>
+    </div>
+
+</div>
+
+
+</div>
+    <!-- Footer -->
+   <footer class="footer-distributed">
+
+      <div class="footer-left">
+
+        <h3>Med<span>World</span></h3>
+
+        <p class="footer-links">
+          <a href="index11.html">Home</a>
+          
+          <a href="aboutUs.html">About</a>
+          
+          <a href="contact.html">Contact</a>
+        </p>
+
+        <p class="footer-company-name">MedWorld <br>&copy; Shamit Lal, Shivam Duggal, Rohit Sharma 2016</p>
+      </div>
+    <div class="footer-center">
+
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>Delhi Technological University</span> Delhi, India</p>
+        </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+91 9717127722</p>
+        </div>
+
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:support@company.com">supportmedworld@gmail.com</a></p>
+        </div>
+
+    </div>
+    <div class="footer-right">
+
+        <p class="footer-company-about">
+          <span>Reach Us</span>
+          
+        </p>
+
+        <div class="footer-icons">
+
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-github"></i></a>
+
+        </div>
+
+    </div>
+    </footer><!-- End Footer -->
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{% static 'ayurveda/js/jquery.js' %}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'ayurveda/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'ayurveda/js/bootshape.js' %}"></script>
+  </body>
+</html>

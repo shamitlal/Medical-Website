@@ -1,0 +1,15 @@
+a.disease{
+  color: #2da1c1;
+  font-size: small;
+  text-decoration: none;
+  
+
+}
+a.disease:hover
+{
+color: #f90;
+text-decoration: underline;
+}
+a.last-disease{
+position: relative;
+}

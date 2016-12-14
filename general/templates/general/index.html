@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+	<head>
+		 <style>
+		 .verticalLine {
+    border-left:  solid #ff0000;
+}
+            .round {
+                border-radius: 50%;
+                overflow: hidden;
+                width: 150px;
+                height: 150px;
+                float:left;
+            }
+            .round img {
+                display: block;
+            /* Stretch 
+                  height: 100%;
+                  width: 100%; */
+            min-width: 100%;
+            min-height: 100%;
+            }
+            
+			a.demo_bottom:link, a.demo_bottom:visited {
+
+			    background-color: lightblue;
+			    color: black;
+			    padding: 14px 25px;
+			    text-align: center;	
+			    text-decoration: none;
+			    display: inline-block;
+			    text-decoration:none;
+			}
+
+
+			a.demo_bottom:hover, a.demo_bottom:active {
+			    background-color: lavender;
+			    text-decoration:none;
+			}
+
+			a.demo_above:link, a.demo_above:visited {
+
+			    background-color: white;
+			    color: black;
+			    padding: 14px 25px;
+			    text-align: center;	
+			    text-decoration: none;
+			}
+
+
+			a.demo_above:hover, a.demo_above:active {
+			    background-color: lavender;
+			    text-decoration:none;
+			}
+						
+        </style>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="{% static 'general/css/bootstrap.css' %}" rel="stylesheet">
+    
+    <!--Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Belgrano|Courgette&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'general/cssmg13/footer-distributed-with-address-and-phones.css' %}">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    
+   
+
+  
+
+
+  <!--grid ends -->
+		<title>news and information</title>
+		
+		<!-- CDN -->
+		<link href="http://www.anowave.com/factory/cdn/styles/rainbow/themes/github.css" rel="stylesheet" type="text/css" />
+		<script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+		<!-- /.CDN -->
+		<script type="text/javascript" src="{% static 'general/js1/jquery.anoslide.js' %}"></script>
+		<style type="text/css">
+			.carousel { position:relative; min-height: 20px; height:auto !important; height: 20px;  background:url({% static 'general/images/loader.gif' %}) center center no-repeat; }
+			.carousel .next,
+			.carousel .prev { display:none; width:56px; height:56px; position:absolute; bottom:20px; left:50%; margin-top:-28px; z-index:9999; cursor:pointer; }
+			.carousel .prev { margin-left:-60px; background:url({% static 'general/images/prev.png' %}) 0 0 no-repeat;  }
+			.carousel .next { margin-right:-60px;  background:url({% static 'general/images/next.png' %}) 0 0 no-repeat; }
+			.carousel li { display:none; }
+			.carousel li img { width:100%; height:auto; }
+			.paging { position:absolute; z-index:9998; }
+			.paging > a { display:block; cursor:pointer; width:40px; height:40px; float:left; background:url(images/dots.png) 0px -40px no-repeat; }
+			.paging > a:hover,
+			.paging > a.current { background:url(images/dots.png) 0px 0px no-repeat;  }
+			.badge { display:block; width:104px; height:104px; background:url() 0 0 no-repeat; z-index:9000; position:absolute; top:-3px; left:-3px; }
+			img {
+-webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  -o-user-select: none;
+  user-select: none;    
+}
+			/* Figure */
+		</style>
+		<!--[if lt IE 9]>
+		   <script>
+		      document.createElement('header');
+		      document.createElement('nav');
+		      document.createElement('section');
+		      document.createElement('article');
+		      document.createElement('aside');
+		      document.createElement('footer');
+		      document.createElement('figure');
+		   </script>
+		<![endif]-->
+	</head>
+	<body>
+		
+   <!-- Navigation bar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/medworld/">MedWorld</a>
+        </div>
+        <nav role="navigation" class="collapse navbar-collapse navbar-right">
+          <ul class="navbar-nav nav">
+
+            {% if user.is_authenticated %}
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Welcome {{ user.get_username }}<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="/register/logout/">Logout</a></li>
+             
+                <!--<li class="divider"></li>
+                <li><a href="#">All Items</a></li>-->
+              </ul>
+            </li>
+             
+            {% else %}
+              <li class=""><a href="/register/">Register / Login</a></li>
+            {% endif %} 
+
+
+            <li class=""><a href="/medworld/">Home</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Healthcare Marketting <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="http://www.netmeds.com">Buy medicines</a></li>
+                <li><a href="http://alphanursing.com.au/book-a-nurse/">Book a nurse</a></li>
+                <li><a href="https://www.practo.com">Make a doctor appointment</a></li>
+                <!--<li class="divider"></li>
+                <li><a href="#">All Items</a></li>-->
+              </ul>
+            </li>
+            
+            <li class="dropdown active">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">General<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="/general/">News and Information</a></li>
+                <li><a href="/disease/">Diseases</a></li>
+                <li>
+                {% if user.is_authenticated %}
+                <a href="/video_chat/">Video Chat</a>
+                {% endif %}
+                <li>
+
+                <!--<li class="divider"></li>
+                <li><a href="#">All Items</a></li>-->
+              </ul>
+            </li>
+
+            <li><a href="/healthcare_media/">Healthcare Media</a></li>
+            <li><a href="/about_us/">About Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div><!-- End Navigation bar -->
+    <br><br><br><br>
+
+    			
+		<div class="wrapper" >
+			<div class="carousel captions">
+				<a class="prev" data-prev-caption></a>
+				
+				<ul>
+					
+					<li data-caption="<span style='color:#00f0ff'>Obesity</span><br><br>More people worldwide are obese than underweight; one-fifth of <br> adults could be obese by 2025" style="position: absolute; cursor: pointer; overflow: hidden; display: block; width: 674px; left: 0px; height: auto;">
+						{% load staticfiles %}
+						<figure><img data-src= "{% static "general/images/img11.jpg" %}" src="" /></figure>
+					</li>
+					<li data-caption="<span style='color:#00f0ff'>Feeling Down</span><br /><br />Your diet won't cure depression but some foods may help fight it" style="position: absolute; cursor: pointer; overflow: hidden; display: block; width: 674px; left: 0px; height: auto;">
+						{% load staticfiles %}
+						<figure><img data-src="{% static "general/images/img12.jpg" %}" src="" /></figure>
+					</li>
+					<li data-caption="<span style='color:#00f0ff'>Childhood ADHD QUIZ</span><br /><br />Test your knowledge for this disorder commonly seen in kids">
+						{% load staticfiles %}
+						<figure><img data-src="{% static "general/images/img13.jpg" %}" src="" /></figure>
+					</li>
+
+					<li data-caption="<span style='color:#00f0ff'>Underactive Thyroid</span><br /><br />People with hypothyroidism may be at a greater risk for type 2 diabetes <br>even with medication">
+						{% load staticfiles %}
+						<figure><img height="200" data-src="{% static "general/images/img15.jpg" %}"  src="" /></figure>
+					</li>
+
+					<li data-caption="<span style='color:#00f0ff'>Adult ADHD</span><br /><br />If you have ADHD and want to get better organized, use these helpful daily <br>tips to get keep your life under control">
+						{% load staticfiles %}
+						<figure><img height="200" data-src="{% static "general/images/img16.jpg" %}"  src="" /></figure>
+					</li>
+
+					<li data-caption="<span style='color:#00f0ff'>Depression Quiz</span><br /><br />Test your knowledge and learn about depression, mania and <br>bipolar disorder">
+						{% load staticfiles %}
+						<figure><img height="200" data-src="{% static "general/images/img17.jpg" %}"  src="" /></figure>
+					</li>
+
+					<li data-caption="<span style='color:#00f0ff'>Childhood ADHD QUIZ</span><br /><br />Test your knowledge for this disorder commonly seen in kids.">
+						{% load staticfiles %}
+						<figure><img data-src="{% static "general/images/img14.jpg" %}" src="" /></figure>
+					</li>
+				</ul>
+				<a class="next" data-next-caption></a>
+				<a class="badge"></a>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$('.carousel.captions ul').anoSlide(
+			{
+				items: 2,
+				speed: 500,
+				prev: 'a.prev[data-prev-caption]',
+				next: 'a.next[data-next-caption]',
+				lazy: true,
+				onStart: function(ui)
+				{
+					ui.slide.element.find('.caption').remove();
+				},
+				onEnd: function(ui)
+				{
+					var content = ui.slide.element.data('caption');
+					
+					var caption = $('<div/>').addClass('caption').css(
+					{
+						position: 			'absolute', 
+						background: 		'rgb(0,0,0)',
+						color: 				'rgb(255,255,255)',
+						textShadow: 		'rgb(0,0,0) -1px -1px',
+						opacity: 			0.5,
+						top:				-100,
+						left:				50,
+						padding:			20,
+						webkitBorderRadius: 5,
+						mozBorderRadius: 	5,
+						borderRadius: 		5
+					}).html(content);
+					
+					caption.appendTo(ui.slide.element).animate(
+					{
+						top:50
+					});
+				}
+			})
+		</script>
+	
+	
+ 	
+ 	
+	<div class="container-fluid" >
+ 	<div class="row">
+ 	<center><h3><font face="comic sans" color="green"><b>MEDICAL AND HEALTH INFORMATION<b></h3></font> </center><br>
+    <div class="col-sm-6 verticalLine">
+    	<p style="width: 500px;">
+    	<div class="round">
+    		{% load staticfiles %}
+			<img src="{% static 'general/images/zika.jpg' %}" style="float: left;" />
+		</div>
+		<font face="comic sans"><B><h4><a href="google.com">&nbsp &nbsp EVERYTHING YOU NEED TO KNOW ABOUT ZIKA &nbsp &nbsp VIRUS</h4></B></font></a><br>
+		<font face="courier"><B>&nbsp  View this guide to zika virus, its causes, symptoms &nbsp &nbsp and treatment options. Find out how zika is &nbsp &nbsp &nbsp &nbsp&nbsptransmitted by mosquitoes and its effect on pregnancy</font></b>
+		<br><br>
+		</p>
+    </div>
+
+    <div class="col-sm-6 verticalLine">
+    	<p style="width: 500px;">
+    	<div class="round">
+    		{% load staticfiles %}
+			<img src="{% static 'general/images/psoriasis.jpg' %}" style="float: left;" />
+		</div>
+		<font face="comic sans"><B><h4><a href="google.com">&nbsp &nbsp PSORIASIS, SYMPTIOMS, CAUSES AND &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp TREATMENT</h4></B></font></a><br>
+		<font face="courier"><B>&nbsp Psoriases is a genetically programmed inflammatory &nbsp &nbsp &nbsp disease that affects primarily the skin in about 3% <br>  &nbsp of individuals in United States</font></b>
+		<br><br>
+		</p>
+    </div>
+
+    
+  </div>
+  <BR><BR>
+  <center><H4> LATEST IMAGES AND SLIDESHOWS </H4></center>
+  <br><br>
+<div class="row">
+    <div class="col-sm-6 ">
+    	<font face="fantasy" size="3px">
+    	<ul>
+    		<li> <a href ="#">Healhy Eating : </a>Tips & Recipies for a Healthier Game Day</li>
+    		<li> <a href ="#">Diabetes : </a>11 Low-Sugar Drink Ideas</li>
+    		<li> <a href ="#">Emergency Prepardness : </a>Winter Weather</li>
+    	</ul></font>
+
+
+    </div>
+
+    <div class="col-sm-6 ">
+    	<font face="fantasy" size="3px">
+    	<ul>
+    		<li> <a href ="#">Depression : </a>Foods to Help Fight Depression</li>
+    		<li> <a href ="#">Cold & Flu : </a>12 Causes of Respiratory Infections</li>
+    		<li> <a href ="#">Skin Conditions Gallery : </a> Image Collection of Skin Problems</li>
+    	</ul></font>
+
+    </div>
+
+    
+  </div>
+
+
+</div>
+
+{% load staticfiles %}
+<a href="#"><img src="{% static 'general/images/throat.jpg' %}" alt="throat" ></a>
+
+<BR>
+<br>
+
+
+<div class="container-fluid" >
+ 	<div class="row">
+
+    <div class="col-sm-6 ">
+    	<CENTER><h3><b><u>HEALTH NEWS OF THE WEEK</b></u></H3></CENTER>
+    		
+    	{% for item in obj %}	
+
+
+    		<p style="width: 500px;">
+    		<div>
+
+    			
+
+    		{% ifequal item.key "1" %}
+    		{% load staticfiles %}
+			<img height="50" src="{% static 'general/images/img1.jpg' %}" style="float: left;" />
+			{% endifequal %}
+
+			{% ifequal item.key "2" %}
+			{% load staticfiles %}
+			<img height="50" src="{% static 'general/images/img2.jpg' %}" style="float: left;" />
+			{% endifequal %}
+
+			{% ifequal item.key "3" %}
+			{% load staticfiles %}
+			<img height="50" src="{% static 'general/images/img3.jpg' %}" style="float: left;" />
+			{% endifequal %}
+
+			{% ifequal item.key "4" %}
+			{% load staticfiles %}
+			<img height="50" src="{% static 'general/images/img4.jpg' %}" style="float: left;" />
+			{% endifequal %}
+
+			{% ifequal item.key "5" %}
+			{% load staticfiles %}
+			<img height="50" src="{% static 'general/images/img5.jpg' %}" style="float: left;" />
+			{% endifequal %}
+
+			</div><br>
+			&nbsp
+			<font size="3" face="comic sans"><B><a href="{{item.link}}" class="demo_above">{{item.heading}}</B></font></a><br>
+			</p>
+			
+		{% endfor %}	
+        
+
+    	
+    </div>
+
+    <div class="col-sm-6 ">
+    	<CENTER><h3><b><u>NEW AND UPDATED</b></u></H3></CENTER>
+    	{% for item in endobj %}	
+
+
+    		<p style="width: 500px;">
+    		<div>
+
+    			
+
+    		{% ifequal item.key "6" %}
+    		{% load staticfiles %}
+			<img height="50" src="{% static 'general/images/img6.jpg' %}" style="float: left;" />
+			{% endifequal %}
+
+			{% ifequal item.key "7" %}
+			{% load staticfiles %}
+			<img height="50" src="{% static 'general/images/img7.jpg' %}" style="float: left;" />
+			{% endifequal %}
+
+			{% ifequal item.key "8" %}
+			{% load staticfiles %}
+			<img height="50" src="{% static 'general/images/img8.jpg' %}" style="float: left;" />
+			{% endifequal %}
+
+			{% ifequal item.key "9" %}
+			{% load staticfiles %}
+			<img height="50" src="{% static 'general/images/img9.jpg' %}" style="float: left;" />
+			{% endifequal %}
+
+			{% ifequal item.key "10" %}
+			{% load staticfiles %}
+			<img height="50" src="{% static 'general/images/img10.jpg' %}" style="float: left;" />
+			{% endifequal %}
+
+			</div><br>
+			&nbsp&nbsp
+
+			<font size="3" face="comic sans"><B><a href="{{item.link}}" class="demo_above">{{item.heading}}</B></font></a><br>
+			</p>
+			
+		{% endfor %}	
+        
+		
+    </div>
+</div>
+</div>
+  
+<br><br>
+
+<div class="container-fluid" >
+ 	<div class="row">
+ 	<div class="col-sm-2"></div>
+    <div class="col-sm-3 ">
+    	<font face="impact"><h2><br><br><br>FEATURED ON <br>MEDWORLD
+    	</font>
+    </div>
+    <div class="col-sm-6" style="background-color: lightblue;" >
+    	<br>
+    	<font face="fantasy">
+    	<a href="http://www.medicinenet.com/dengue_fever/article.htm" class="demo_bottom">Dengue Fever: What Are Dengue Fever Symptoms and Signs?</a>
+    	<a href="http://www.who.int/immunization/research/development/malaria_vaccine_qa/en/" class="demo_bottom">&nbsp &nbsp Malaria: Is There a Malaria Vaccine?</a>
+    	<a href="http://www.medicinenet.com/rheumatoid_arthritis_early_symptoms/article.htm" class="demo_bottom">Rheumatoid Arthritis: 12 Early Symptoms and Signs of Rheumatoid Arthritis</a>
+    	<a href="http://www.medicinenet.com/kidney_pain/article.htm" class="demo_bottom">&nbsp&nbsp&nbspKidney Pain: What Are the Symptoms of Kidney Pain?</a>
+    	<a href="http://www.medicinenet.com/ebola_hemorrhagic_fever_ebola_hf/article.htm" class="demo_bottom">&nbsp  Ebola Virus: What Are Ebola Symptoms and Signs?</a>
+    	<a href="http://www.medicinenet.com/liver_blood_tests/article.htm" class="demo_bottom">&nbsp  Liver Blood Tests: Understand Liver Blood Tests Results</a>
+    	<a href="http://www.medicinenet.com/urinary_tract_infection/article.htm" class="demo_bottom">Urinary Tract Infection (UTI): Read About UTI Symptoms and Treatment</a>
+    	<a href="http://www.medicinenet.com/swollen_lymph_nodes/article.htm" class="demo_bottom">Swollen Lymph Nodes: What Are the Causes of Swollen Lymph Nodes?</a>
+    </font>
+    </div>
+    <div class="col-sm-1 "></div>
+
+    
+  </div>
+  </div>
+<br><br>
+		
+
+		<!-- Footer -->
+   <footer class="footer-distributed">
+
+      <div class="footer-left">
+
+        <h3>Med<span>World</span></h3>
+
+        <p class="footer-links">
+          <a href="index11.html">Home</a>
+          
+          <a href="aboutUs.html">About</a>
+          
+          <a href="contact.html">Contact</a>
+        </p>
+
+        <p class="footer-company-name">MedWorld <br>&copy; Shamit Lal, Shivam Duggal, Rohit Sharma 2016</p>
+      </div>
+    <div class="footer-center">
+
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>Delhi Technological University</span> Delhi, India</p>
+        </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+91 9717127722</p>
+        </div>
+
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:support@company.com">supportmedworld@gmail.com</a></p>
+        </div>
+
+    </div>
+    <div class="footer-right">
+
+        <p class="footer-company-about">
+          <span>Reach Us</span>
+          
+        </p>
+
+        <div class="footer-icons">
+
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-github"></i></a>
+
+        </div>
+
+    </div>
+    </footer><!-- End Footer -->
+    	{% load staticfiles %}
+		<script src="http://www.anowave.com/factory/cdn/scripts/tabs.js"></script>
+		<script src="http://www.anowave.com/factory/cdn/scripts/demo.js"></script>
+		<script src="http://www.anowave.com/factory/cdn/scripts/rainbow/rainbow.js"></script>
+		<script src="http://www.anowave.com/factory/cdn/scripts/rainbow/language/generic.js"></script>
+		<script src="http://www.anowave.com/factory/cdn/scripts/rainbow/language/javascript.js"></script>
+		<script src="http://www.anowave.com/factory/cdn/scripts/rainbow/language/css.js"></script>
+		<script src="http://www.anowave.com/factory/cdn/scripts/rainbow/language/html.js"></script>
+		<script src="http://www.anowave.com/factory/cdn/scripts/rainbow/language/php.js"></script>
+		<script type="text/javascript">
+			Demo.bind()
+		</script>
+		{% load staticfiles %}
+		<script src="{% static 'general/js/jquery.js' %}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    {% load staticfiles %}
+    <script src="{% static 'general/js/bootstrap.min.js' %}"></script>
+    {% load staticfiles %}
+    <script src="{% static 'general/js/bootshape.js' %}"></script>
+	</body>
+</html>

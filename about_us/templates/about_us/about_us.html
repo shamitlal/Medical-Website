@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<!--
+TEMPLATE
+Name: Zoo Planet
+Version: 1.0
+Created: 23 January 2014
+
+AUTHOR
+Design and code by: http://www.bootshape.com
+Free stock photos by: http://www.bootshape.com
+
+Read full license: http://www.bootshape.com/license.php
+
+CREDITS
+Background: http://subtlepatterns.com/ (extra_clean_paper)
+Fonts: http://www.google.com/fonts (Actor, Duru_Sans)
+
+SUPPORT
+E-mail: bootshape.com@gmail.com
+Contact: http://www.bootshape.com/contact.php
+-->
+{% load staticfiles %}
+<html>
+  <head>
+    <title>Contacts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="{% static 'about_us/css/bootstrap.css' %}" rel="stylesheet">
+    
+    <!--Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Belgrano|Courgette&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    
+    <!--Bootshape-->
+    <link href="{% static 'about_us/css/bootshape.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'about_us/cssmg13/footer-distributed-with-address-and-phones.css' %}">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+
+    <style>
+    .round {
+                border-radius: 50%;
+                overflow: hidden;
+                width: 200px;
+                height: 200px;
+                float:left;
+            }
+            .round img {
+                display: block;
+            /* Stretch 
+                  height: 100%;
+                  width: 100%; */
+            min-width: 100%;
+            min-height: 100%;
+            }
+
+
+    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+   <!-- Navigation bar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/medworld/">MedWorld</a>
+        </div>
+        <nav role="navigation" class="collapse navbar-collapse navbar-right">
+          <ul class="navbar-nav nav">
+
+            {% if user.is_authenticated %}
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Welcome {{ user.get_username }}<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="/register/logout/">Logout</a></li>
+             
+                <!--<li class="divider"></li>
+                <li><a href="#">All Items</a></li>-->
+              </ul>
+            </li>
+             
+            {% else %}
+              <li class=""><a href="/register/">Register / Login</a></li>
+            {% endif %} 
+
+
+            <li class=""><a href="/medworld/">Home</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Healthcare Marketting <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="http://www.netmeds.com">Buy medicines</a></li>
+                <li><a href="http://alphanursing.com.au/book-a-nurse/">Book a nurse</a></li>
+                <li><a href="https://www.practo.com">Make a doctor appointment</a></li>
+                <!--<li class="divider"></li>
+                <li><a href="#">All Items</a></li>-->
+              </ul>
+            </li>
+            
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">General<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="/general/">News and Information</a></li>
+                <li><a href="/disease/">Diseases</a></li>
+                <li>
+                {% if user.is_authenticated %}
+                <a href="/video_chat/">Video Chat</a>
+                {% endif %}
+                <li>
+
+                <!--<li class="divider"></li>
+                <li><a href="#">All Items</a></li>-->
+              </ul>
+            </li>
+
+            <li><a href="/healthcare_media/">Healthcare Media</a></li>
+            <li class="active"><a href="/about_us/">About Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div><!-- End Navigation bar -->
+    <br><br><br>
+    <img src="{% static 'about_us/img/about-us.jpg' %}">
+    <br><br><br>
+
+    <!--<center><font face="fantasy" size="8">About Us</font></center>-->
+    <br><br><br><br>
+    <div class="container-fluid">
+  <font face ="Comic Sans MS" size = 6 ><p><b><i><center>Never lose your health again!</b></i></center></font></i><br>
+  <div class="row">
+    <div class="col-sm-2" style="background-color:lavender;"></div>
+    <div class="col-sm-8">
+
+      <font face="Courier"><center><p style="font-size:18px;text-align:justify;padding:10px 30px;line-height:35px;color:#000">Providing smart, proven techniques to cure diseases, construe customer behavior and understanding their needs. Nothing short of Awesome!! At MedWorld we provide solutions to various health related problems, free consultancy by world class doctors, treatment of diseases in all possible ways, be it Allopathy, Homeopathy or Ayurveda and latest health news so you can align your daily routine to remain healthy and fit.We help you tailor your health related search experiences by incorporating information provided by vast number of webpages, tweets, feedback and emails into facts and knowledge on how people feel about a particular treatment.</p></center></font>
+    <br><br><br><br>
+
+    </div>
+    <div class="col-sm-2" style="background-color:lavender;"></div>
+  </div>
+</div>
+    
+    <!-- Thumbnails -->
+    <center><font face="fantasy" size="8">The Team</font></center><br><br>
+    <div class="container thumbs">
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <br><br>
+          <center>
+            <img src="{% static 'about_us/img/contact1.jpg' %}" alt="" class="img-responsive" height="500" width="230" style="border-radius:50% ;overflow: hidden;
+                width: 200px;
+                height: 200px;">
+          </center>
+       
+
+          <div class="caption">
+            <h3 class=""><b><center>Shamit Lal</center></b></h3>
+            <br>
+            
+            <div class="footer-icons">
+    <br>
+    <center>Pursuing B.Tech in Computer Science</center><br>
+    <center>shamitlal@yahoo.com</center>
+    <br>
+    <center>9717127722</center>
+    <br>
+    <center>
+          <a href="https://www.facebook.com/shamit.lal"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-github"></i></a>
+        </center>
+        </div>
+
+          </div>
+        </div>
+      </div><div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <br><br>
+          <center>
+            <img src="{% static 'about_us/img/contact2.jpg' %}" alt="" class="img-responsive" height="500" width="230" style="border-radius:50% ;overflow: hidden;
+                width: 200px;
+                height: 200px;">
+          </center>
+       
+
+          <div class="caption">
+            <h3 class=""><b><center>Shivam Duggal</center></b></h3>
+            <br>
+            <div class="footer-icons">
+    <br>
+    <center>Pursuing B.Tech in Computer Science</center><br>
+    <center>shivamduggal.9507@gmail.com</center>
+    <br>
+    <center>9871580065</center>
+    <br>
+    <center>
+          <a href="https://www.facebook.com/shivam.duggal.923?fref=ts"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-github"></i></a>
+        </center>
+        </div>
+          </div>
+        </div>
+      </div><div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <br><br>
+          <center>
+            <img src="{% static 'about_us/img/contact3.jpg' %}" alt="" class="img-responsive" height="500" width="230" style="border-radius:50% ;overflow: hidden;
+                width: 200px;
+                height: 200px;">
+          </center>
+       
+
+          <div class="caption">
+            <h3 class=""><b><center>Rohit Sharma</center></b></h3>
+            <br>
+            <!--
+            <div class="btn-toolbar text-center">
+              <a href="https://www.facebook.com/profile.php?id=100006187504205" role="button" class="btn btn-primary pull-center">Faceboook</a> -->
+
+              <div class="footer-icons">
+    <br>
+    <center>Pursuing B.Tech in Computer Science</center><br>
+    <center>rohit_sharma2111</center>
+    <br>
+    <center>9711595666</center>
+    <br>
+    <center>
+          <a href="https://www.facebook.com/profile.php?id=100006187504205&fref=ts"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-github"></i></a>
+        </center>
+        </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Thumbnails -->
+    <!-- Content -->
+    
+    <!-- Footer -->
+   <footer class="footer-distributed">
+
+      <div class="footer-left">
+
+        <h3>Med<span>World</span></h3>
+
+        <p class="footer-links">
+          <a href="index11.html">Home</a>
+          
+          <a href="aboutUs.html">About</a>
+          
+          <a href="contact.html">Contact</a>
+        </p>
+
+        <p class="footer-company-name">MedWorld <br>&copy; Shamit Lal, Shivam Duggal, Rohit Sharma 2016</p>
+      </div>
+    <div class="footer-center">
+
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>Delhi Technological University</span> Delhi, India</p>
+        </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+91 9717127722</p>
+        </div>
+
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:support@company.com">supportmedworld@gmail.com</a></p>
+        </div>
+
+    </div>
+    <div class="footer-right">
+
+        <p class="footer-company-about">
+          <span>Reach Us</span>
+          
+        </p>
+
+        <div class="footer-icons">
+
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-github"></i></a>
+
+        </div>
+
+    </div>
+    </footer><!-- End Footer -->
+    {% load staticfiles %}
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{% static 'about_us/js/jquery.js' %}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'about_us/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'about_us/js/bootshape.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+div.col-lg-8{
+	background-color:white;
+	margin-bottom:20px;
+	}
+div.inner-div{
+	background:white;
+	padding:45px;
+	
+	}
+h3.inner-div{
+    
+    color: maroon;
+    font-size:35px;
+    /*font-family: B"ff-meta-web-pro-n4","ff-meta-web-pro",arial,sans-serif;*/
+}

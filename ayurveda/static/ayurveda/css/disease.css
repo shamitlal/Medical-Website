@@ -1,0 +1,12 @@
+a.disease{
+  color: #2da1c1;
+  font-size: small;
+  text-decoration: none;
+  float: right;
+
+}
+a.disease:hover
+{
+color: #f90;
+text-decoration: underline;
+}

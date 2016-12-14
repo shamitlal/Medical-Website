@@ -1,0 +1,53 @@
+.shadow{
+
+     box-shadow:-10px 0px 50px rgba(0,0,0,1);
+}
+.feature
+{
+    position: relative;
+    float: left;
+    width: 192px;
+    display: block;
+    background: #3a3f48;
+}
+.overlay
+{
+    position: absolute;
+    height: 280px;
+    width: 192px;
+    left: 0;
+    top: 0;
+    background: url('overlay.png') left bottom no-repeat;
+}
+.reveal
+{
+    
+    position: absolute;
+    width: 192px;
+    height: 0px;
+    left: 0;
+    cursor: pointer;
+    overflow: hidden;
+    background: url('reveal.png') left bottom no-repeat;
+}
+a:hover > div
+{
+     height: 280px;
+     top :0;
+}
+.feature h6 {
+    float: left;
+    width: 164px;
+    color: #7d0c08;
+    font-size: 30px;
+    line-height: 30px;
+    padding: 18px 14px;
+    font-weight: 500;
+    text-shadow: 1px 1px #fd4344;
+    
+}
+.feature h6 span {
+    color: #fff;
+    display: block;
+    text-shadow: none;
+}

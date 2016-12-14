@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+  <!--Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Belgrano|Courgette&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>HOMEOPATHY</title>
+
+ 
+    
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'homeopathy/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'homeopathy/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+    <link rel="stylesheet" href="{% static 'homeopathy/cssmg13/footer-distributed-with-address-and-phones.css' %}">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    
+      <!--Bootshape-->
+    <link href="{% static 'homeopathy/css1/bootshape.css' %}" rel="stylesheet">
+    <link href="{% static 'homeopathy/css1/bootstrap.css' %}" rel="stylesheet">
+   
+</head>
+<body>
+   <!-- Navigation bar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/medworld/">MedWorld</a>
+        </div>
+        <nav role="navigation" class="collapse navbar-collapse navbar-right">
+          <ul class="navbar-nav nav">
+
+            {% if user.is_authenticated %}
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Welcome {{ user.get_username }}<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="/register/logout/">Logout</a></li>
+             
+                <!--<li class="divider"></li>
+                <li><a href="#">All Items</a></li>-->
+              </ul>
+            </li>
+             
+            {% else %}
+              <li class=""><a href="/register/">Register / Login</a></li>
+            {% endif %} 
+
+
+            <li class="active"><a href="/medworld/">Home</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Healthcare Marketting <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="http://www.netmeds.com">Buy medicines</a></li>
+                <li><a href="http://alphanursing.com.au/book-a-nurse/">Book a nurse</a></li>
+                <li><a href="https://www.practo.com">Make a doctor appointment</a></li>
+                <!--<li class="divider"></li>
+                <li><a href="#">All Items</a></li>-->
+              </ul>
+            </li>
+            
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">General<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="/general/">News and Information</a></li>
+                <li><a href="/disease/">Diseases</a></li>
+                <li>
+                {% if user.is_authenticated %}
+                <a href="/video_chat/">Video Chat</a>
+                {% endif %}
+                <li>
+
+                <!--<li class="divider"></li>
+                <li><a href="#">All Items</a></li>-->
+              </ul>
+            </li>
+
+            <li><a href="/healthcare_media/">Healthcare Media</a></li>
+            <li><a href="/about_us/">About Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div><!-- End Navigation bar -->
+<br><br><br><br><br>
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">HOMEOPATHY</h1>
+        <div class="row center">
+
+          <h5 class="header col s12 light"><B>“There have been two great revelations in my life: The first was bepop, the second was homeopathy.” 
+― Dizzy Gillespie</h5></B>
+        </div>
+        
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img height="1000" width="1000" src="{% static 'homeopathy/img/h1.jpg' %}" alt="Unsplashed background img 1"></div>
+  </div>
+
+ 
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col-sm-6 center">
+
+          
+
+          <h2><FONT FACE="COMIC SANS" COLOR="GREEN">PRINCIPLES OF HOMEOPATHY</h2></FONT>
+          <p class="left-align light"><font face="courier">Homeopathy is based on the principle that "like cures like". Each homeopathic remedy carries with it a specific footprint and a homeopathic practitioner is trained to identify the symptom picture of the patient and match it to that of a single remedy for a complete cure; each patient is treated individually because no two symptom pictures (and therefore patients) are alike. When prescribing a homeopathic remedy, the stimulation it provides the body is simply so that the body can complete its healing work that comes naturally. The smallest possible dose is given with the understanding that the medicine works from within the patientâ€™s vitality and is not imposed upon from the outside. By stimulating oneâ€™s own vitality, the patient can heal naturally and efficiently without experiencing side effects. How is a homeopathic remedy made? Remedies are made through a series of dilutions and successions. The original substance is diluted and shaken to acquire the desired potency and to release the dynamic nature of the medicine. Dr. Hahnemann (the founder of Homeopathy) discovered that by using infinitesimally small doses, he could not only alleviate common symptoms, they worked better than large doses! By using the smallest possible dose and only repeating when necessary, side effects and adverse reactions are prevented and one is brought to complete cure safely and efficiently. In addition to the range of symptoms which must be included in a case to find the right homeopathic remedy, precision is very important. For example there are nearly 4,000 homeopathic remedies and of those, the practitioner must be careful to match the remedy picture to the patient symptoms; a different remedy may be prescribed depending on when the symptoms occur, the type of complaint, where it occurs, what brings it on, what other symptoms are experienced, what makes it better or worse etc</p></font>
+        </div>
+        <div class="col-sm-6 center">
+          <div class="row">
+<h2><FONT FACE="COMIC SANS" COLOR="GREEN">DOCTORS</h2></FONT>
+              <div class="col-sm-6">
+
+          <div class="w3-card-4 w3-margin" style="width:95%">
+
+          <header class="w3-container w3-light-grey">
+            <h3>Dr. Sumit Mukerji</h3>
+          </header>
+
+          <div class="w3-container">
+            <p>BHMS , Doctor of Homeopathic Medicine</p>
+            <hr>
+            <img src="{% static 'homeopathy/img/hdoc1.jpg' %}" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+            <p>4th Generation Homeopath in my family, Working as Visiting Senior Consultant Homoeopathy at National Heart Institute..</p><br>
+          </div>
+
+          <a href="https://www.practo.com/delhi/doctor/dr-sumit-mukerji-homeopath"><button class="w3-btn-block w3-dark-grey">See Profile</button></a>
+
+          </div>
+
+
+
+          <div class="w3-card-4 w3-margin" style="width:95%">
+
+          <header class="w3-container w3-light-grey">
+            <h3>Dr. Neeraj Gupta</h3>
+          </header>
+
+          <div class="w3-container">
+            <p>MD - Homeopathy , BHMS</p>
+            <hr>
+            <img src="{% static 'homeopathy/img/hdoc3.jpg' %}" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+            <p>Save Your Body From Steroids & Hormones
+Safe Treatment of All Diseases Homoeopathic Medicines You can book an instant ..</p><br>
+          </div>
+
+          <a href="https://www.practo.com/delhi/doctor/dr-neeraj-gupta-homeopath-3"><button class="w3-btn-block w3-dark-grey">See Profile</button></a>
+
+          </div>
+          <br>
+          <a style="text-decoration:none;" href="https://www.practo.com/delhi/homeopath">see more doctor profiles..</a>
+          </div>
+
+
+        <div class="col-sm-6">
+            
+
+            
+            <div class="w3-card-4 w3-margin" style="width:95%">
+
+          <header class="w3-container w3-light-grey">
+            <h3>Dr. Ranjana Gupta</h3>
+          </header>
+
+          <div class="w3-container">
+            <p>B.Sc. B.H.M.S (Hons)</p>
+            <hr>
+            <img src="{% static 'homeopathy/img/hdoc2.jpg' %}" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+            <p>Rapid And Gentle Long Term Cure, No Side-effects, Builds Immunity With Homeopathic Treatment. Dr. Is a renowned Homeopathic physician..</p><br>
+          </div>
+
+          <a href="https://www.practo.com/delhi/doctor/dr-ranjana-gupta-homeopath-1"><button class="w3-btn-block w3-dark-grey">See Profile</button></a>
+
+          </div>
+
+
+           <div class="w3-card-4 w3-margin" style="width:95%">
+
+          <header class="w3-container w3-light-grey">
+            <h3>Dr. Sunil Kumar</h3>
+          </header>
+
+          <div class="w3-container">
+            <p>MD - Homeopathy</p>
+            <hr>
+            <img src="{% static 'homeopathy/img/hdoc4.jpg' %}" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+            <p>Dr sunil kumar dwivedi MD (MEDICINE) GOLD MEDALIST IN HOMOEOPATHY Speciality in asthma diabetic blood pressure all chronic diorders..</p><br>
+          </div>
+
+          <a href="https://www.practo.com/delhi/doctor/dr-sunil-kumar-dwivedi-homeopath"><button class="w3-btn-block w3-dark-grey">See Profile</button></a>
+
+          </div>
+          </div>
+
+        </div>
+        
+
+  
+
+          </DIV>
+      </div>
+
+    </div>
+  </div>
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h3 class="header col s12 light">Homeopathy seemed . . . both mathematical and poetic.</h3>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'homeopathy/img/background2.jpg' %}" alt="Unsplashed background img 2"></div>
+  </div>
+  
+<!-- PLACE HERE -->
+ 
+<div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center"><b>Mother Tincture and Trituration<b></h5>
+
+            <p class="light">Homeopathic medicines are prepared from different source materials, some of which are soluble in water or alcohol but some are not. Mother tinctures are prepared from those substances which are soluble whereas "triturations" are prepared from those which are not soluble. Mother tinctures are liquids but triturations are dry preparations. These mother tinctures (always denoted by 'Q') and triturations are the basic potencies which are used to prepare further (higher) potencies. The substance like alcohol, water or powder (sugar of milk) used to prepare the medicine is called "vehicle" in homeopathic terminology. In general practice, two systems are being used to raise the potency; namely, the "Decimal System" and the "Centesimal System". </p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+            <h5 class="center"><b>Decimal System</h5></b>
+
+            <p class="light">In this system, one part of the medicinal substance and nine parts of the vehicle are used (ratio of 1:9, 1+9=10). It is due to this ratio that the system is called "Decimal System" and is denoted by letter "X" which stands for number 10 in Latin. The vehicle may be water, alcohol or anything else, dry or wet. Basically, any medicine whether biochemic or homeopathic, powder or liquid, if prepared under decimal system will have letter X written with the number of the potency like, 3X, 6X, 12X, 30X, 200X etc. It is always written after the number. This convention is followed by almost all the countries. The only purpose of this letter X is to indicate that it has been prepared under decimal system and not to differentiate between powder or liquid, homeopathic or biochemic etc. Letter X does not indicate the source of the medicine either.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center"><b>Centesimal System</h5></b>
+
+            <p class="light">In this system, one part of the medicinal substance and ninety nine parts of the vehicle are used (ratio of 1:99, 1+99=100). Like decimal system, it is due to this ratio that the system is called "Centesimal System" and is indicated by letter "C" which is used for number 100 in Latin. Medicines which are prepared under "Centesimal System" should as a matter of principle, have letter C written with the number of the potency to indicate that it has been prepared under Centesimal system, like 30C, 200C etc. Like letter X in the decimal system, letter C in centesimal system is also always written after the potency number. If letter C is found before the number, it is to be taken as 100 while reading the number. </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h3 class="header col s12 light"><b>Homeopathy is the safest and more reliable approach to ailments and has withstood the assaults of established medical practice for over 100 years</b></h3>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img height="2000" width="2000" src="{% static 'homeopathy/img/h3.jpg' %}" alt="Unsplashed background img 3"></div>
+  </div>
+
+  
+
+   <!-- Footer -->
+   <footer class="footer-distributed">
+
+      <div class="footer-left">
+
+        <h3>Med<span>World</span></h3>
+
+        <p class="footer-links">
+          <a href="index11.html">Home</a>
+          
+          <a href="aboutUs.html">About</a>
+          
+          <a href="contact.html">Contact</a>
+        </p>
+
+        <p class="footer-company-name">MedWorld <br>&copy; Shamit Lal, Shivam Duggal, Rohit Sharma 2016</p>
+      </div>
+    <div class="footer-center">
+
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>Delhi Technological University</span> Delhi, India</p>
+        </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+91 9717127722</p>
+        </div>
+
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:support@company.com">supportmedworld@gmail.com</a></p>
+        </div>
+
+    </div>
+    <div class="footer-right">
+
+        <p class="footer-company-about">
+          <span>Reach Us</span>
+          
+        </p>
+
+        <div class="footer-icons">
+
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-github"></i></a>
+
+        </div>
+
+    </div>
+    </footer><!-- End Footer -->
+  <!--  Scripts-->
+{% load staticfiles %}
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{% static 'homeopathy/js1/jquery.js' %}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'homeopathy/js1/bootstrap.min.js' %}"></script>
+    <script src="{% static 'homeopathy/js1/bootshape.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'homeopathy/js/materialize.js' %}"></script>
+  <script src="{% static 'homeopathy/js/init.js' %}"></script>
+
+
+  </body>
+</html>

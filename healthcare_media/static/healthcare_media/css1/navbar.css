@@ -1,0 +1,12 @@
+.custom-navbar{
+        border-top: 5px solid #e67300;
+	border-bottom: 5px solid #e67300;
+	margin-top:20px;
+	margin-bottom:0px;
+}
+.arsenal-crest{
+    position: absolute;
+    left: 45%;
+    z-index: 1;
+    top: 0px;
+}

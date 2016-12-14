@@ -1,0 +1,78 @@
+
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
+      height: 450px;
+      margin: auto;
+}
+.arrow
+{
+    z-index: 1 !important;
+    position: absolute;
+    top: 458;
+    left: 50%;
+    width: 72px;
+    height: 36px;
+    margin-left: -36px;
+    background: url("sprite.png") no-repeat;
+    background-position :-727px -3812px;
+}
+.bottom
+{
+    border-bottom: 5px solid #e67300;
+}
+.jersey
+{
+	height:148px;
+	width:148px;
+	margin-left:30px;
+}
+.jersey-left
+{
+	margin-left:30px;
+}
+span.tab{
+    padding: 0 60px; /* Or desired space*/
+}
+
+.image { 
+   position: relative; 
+   float:left;
+   margin-left:5px;
+   
+   
+}
+
+h4 { 
+   position: absolute; 
+   top: 8; 
+   
+   color:white;
+   font-family:Georgia, serif;
+}
+
+.image:hover { opacity: 0.3; filter: alpha(opacity=30); } 
+h4:hover{
+cursor:hand;
+
+}
+.wider-web {
+    position: relative;
+    padding-top: 26px;
+    border-top: 5px solid #e67300;
+    background: url('sgwwbg.png') -300px 0 repeat;
+}
+.wider-web-top {
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    width: 72px;
+    height: 36px;
+    margin-left: -36px;
+    background: url("sgwwtbg.png") no-repeat;
+    background-position: -726px -3848px;
+}
+.wider-web .inner {
+    width: 936px;
+    padding: 0 0 60px;
+}

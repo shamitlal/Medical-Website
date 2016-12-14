@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+  <!--Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Belgrano|Courgette&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>ALLOPATHY</title>
+
+ 
+    
+
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'allopathy/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'allopathy/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+    <link rel="stylesheet" href="{% static 'allopathy/cssmg13/footer-distributed-with-address-and-phones.css' %}">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    
+      <!--Bootshape-->
+    <link href="{% static 'allopathy/css1/bootshape.css' %}" rel="stylesheet">
+    <link href="{% static 'allopathy/css1/bootstrap.css' %}" rel="stylesheet">
+   
+</head>
+<body>
+   <!-- Navigation bar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/medworld/">MedWorld</a>
+        </div>
+        <nav role="navigation" class="collapse navbar-collapse navbar-right">
+          <ul class="navbar-nav nav">
+
+            {% if user.is_authenticated %}
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Welcome {{ user.get_username }}<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="/register/logout/">Logout</a></li>
+             
+                <!--<li class="divider"></li>
+                <li><a href="#">All Items</a></li>-->
+              </ul>
+            </li>
+             
+            {% else %}
+              <li class=""><a href="/register/">Register / Login</a></li>
+            {% endif %} 
+
+
+            <li class="active"><a href="/medworld/">Home</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Healthcare Marketting <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="http://www.netmeds.com">Buy medicines</a></li>
+                <li><a href="http://alphanursing.com.au/book-a-nurse/">Book a nurse</a></li>
+                <li><a href="https://www.practo.com">Make a doctor appointment</a></li>
+                <!--<li class="divider"></li>
+                <li><a href="#">All Items</a></li>-->
+              </ul>
+            </li>
+            
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">General<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="/general/">News and Information</a></li>
+                <li><a href="/disease/">Diseases</a></li>
+                <li>
+                {% if user.is_authenticated %}
+                <a href="/video_chat/">Video Chat</a>
+                {% endif %}
+                <li>
+
+                <!--<li class="divider"></li>
+                <li><a href="#">All Items</a></li>-->
+              </ul>
+            </li>
+
+            <li><a href="/healthcare_media/">Healthcare Media</a></li>
+            <li><a href="/about_us/">About Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div><!-- End Navigation bar -->
+<br><br><br><br><br>
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">ALLOPATHY</h1>
+        <div class="row center">
+
+          <h5 class="header col s12 light"><B>"Wherever the art of medicine is loved, there is also a love of humanity" --Hippocrates</h5></B>
+        </div>
+        
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img height="1000" width="1000" src="{% static 'allopathy/img/alo1.jpg' %}" alt="Unsplashed background img 1"></div>
+  </div>
+
+ 
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col-sm-6 center">
+
+          
+
+          <h2><FONT FACE="COMIC SANS" COLOR="GREEN">PRINCIPLES OF ALLOPATHY</h2></FONT>
+          <p class="left-align light"><font face="courier">Allopathic medicine is an expression commonly used by homeopaths and proponents of other forms of alternative medicine to refer to mainstream medical use of pharmacologically active agents or physical interventions to treat or suppress symptoms or pathophysiologic processes of diseases or conditions. It a system of medical practice that aims to combat disease by use of remedies (as drugs or surgery) producing effects different from or incompatible with those produced by the disease being treated. The expression was coined in 1810 by the creator of homeopathy, Samuel Hahnemann. In such circles, the expression "allopathic medicine" is still used to refer to "the broad category of medical practice that is sometimes called Western medicine, biomedicine, evidence-based medicine, or modern medicine"</p></font>
+        </div>
+        <div class="col-sm-6">
+            <center><h2><FONT FACE="COMIC SANS" COLOR="GREEN">DOCTORS</h2></FONT></center>
+
+
+            <div class="row">
+
+              <div class="col-sm-6 center">
+
+                <div class="w3-card-4 w3-margin" style="width:95%">
+
+                <header class="w3-container w3-light-grey">
+                  <h3>Dr. Sanchayan</h3>
+                </header>
+
+                <div class="w3-container"><br>
+                  <p>MBBS , DNB</p>
+                  <hr>
+                  <img src="{% static 'allopathy/img/aldoc1.jpg' %}" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                  <p>Being from a non medical family background it was always an inspiration..</p><br>
+                </div>
+
+                <a href="https://www.practo.com/delhi/doctor/sanchayan-roy-internal-medicine"><button class="w3-btn-block w3-dark-grey">See Profile</button></a>
+
+                </div>
+
+
+                <div class="w3-card-4 w3-margin" style="width:95%">
+
+                <header class="w3-container w3-light-grey">
+                  <h3>Dr. Nirmala</h3>
+                </header>
+
+                <div class="w3-container"><br>
+                  <p>MBBS , MD - General Medicine</p>
+                  <hr>
+                  <img src="{% static 'allopathy/img/aldoc4.jpg' %}" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                  <p>Dr. Nirmala Lahoti is an East Delhi based Consultant Physician & Neurologist..</p><br>
+                </div>
+
+                <a href="https://www.practo.com/delhi/doctor/nirmala-lahoti-neurologist"><button class="w3-btn-block w3-dark-grey">See Profile</button></a>
+
+                </div>
+                <a href="https://www.practo.com/delhi/doctors-for-allopathy">see more doctor profiles..</a>
+
+              </div>
+              <div class="col-sm-6 center">
+
+
+
+                <div class="w3-card-4 w3-margin" style="width:95%">
+
+                <header class="w3-container w3-light-grey">
+                  <h3>Dr. Rajesh Madan</h3>
+                </header>
+
+                <div class="w3-container"><br>
+                  <p>BBS , MD - General Medicine</p>
+                  <hr>
+                  <img src="{% static 'allopathy/img/aldoc3.jpg' %}" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                  <p>Dr. Rajesh Madan is a Cardiologist and General Physician in Dwarka, Delhi and..</p><br>
+                </div>
+
+                <a href="https://www.practo.com/delhi/doctor/rajesh-madan-general-physician"><button class="w3-btn-block w3-dark-grey">See Profile</button></a>
+
+                </div>
+
+
+                <div class="w3-card-4 w3-margin" style="width:95%">
+
+                <header class="w3-container w3-light-grey">
+                  <h3>Dr. Aman Vij</h3>
+                </header>
+
+                <div class="w3-container"><br>
+                  <p>MBBS , MD</p>
+                  <hr>
+                  <img src="{% static 'allopathy/img/aldoc2.jpg' %}" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                  <p>Dr. Aman Vij has experience of 18 years in Internal Medicine field and..</p><br>
+                </div>
+
+                <a href="https://www.practo.com/delhi/doctor/dr-aman-vij1-gynecologist-obstetrician"><button class="w3-btn-block w3-dark-grey">See Profile</button></a>
+
+                </div>
+
+
+
+
+              </div>
+
+
+            </div>
+
+
+
+
+          </DIV>
+      </div>
+
+    </div>
+  </div>
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h3 class="header col s12 light">"Medical science has made such tremendous progress that there is hardly a healthy human left." --Aldous Huxley</h3>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'allopathy/img/alo2.jpg' %}" alt="Unsplashed background img 2"></div>
+  </div>
+  
+<!-- PLACE HERE -->
+ 
+<div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center"><b>Etymology<b></h5><br><br>
+
+            <p class="light">Allopathic medicine and allopathy are terms coined in the early 19th century by Samuel Hahnemann, the founder of homeopathy, as a synonym for mainstream medicine.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">history</i></h2>
+            <h5 class="center"><b>History</h5></b>
+
+            <p class="light">The practice of medicine in both Europe and North America during the early 19th century is sometimes referred to as heroic medicine because of the extreme measures sometimes employed in an effort to treat diseases. The term allopath was used by Hahnemann and other early homeopaths to highlight the difference they perceived between homeopathy and the medicine of that time.
+
+With the term allopathy (meaning "other than the disease"), Hahnemann intended to point out how physicians with conventional training employed therapeutic approaches that, in his view, merely treated symptoms and failed to address the disharmony produced by the underlying disease.[clarification needed] Homeopaths saw such symptomatic treatments as "opposites treating opposites" and believed these conventional methods were harmful to patients.
+
+Practitioners of alternative medicine have used the term "allopathic medicine" to refer to the practice of conventional medicine in both Europe and the United States since the 19th century. The term allopathic was used throughout the 19th century as a derogatory term for the practitioners of heroic medicine, a precursor to modern medicine that did not rely on evidence.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">fingerprint</i></h2>
+            <h5 class="center"><b>Current</h5></b>
+
+            <p class="light">Use of the term remains common among homeopaths and has spread to other alternative medicine practices. The meaning implied by the label has never been accepted by conventional medicine and is still considered pejorative by some. More recently, some sources have used the term "allopathic", particularly American sources wishing to distinguish between Doctors of Medicine (MD) and Doctors of Osteopathic Medicine (DO) in the United States. William Jarvis, an expert on alternative medicine and public health, states that "although many modern therapies can be construed to conform to an allopathic rationale (e.g., using a laxative to relieve constipation), standard medicine has never paid allegiance to an allopathic principle" and that the label "allopath" was "considered highly derisive by regular medicine."
+
+Many conventional medical treatments clearly do not fit the nominal definition of allopathy, as they seek to prevent illness, or remove the cause of an illness by acting on the etiology of disease.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h3 class="header col s12 light"><b>Fateful friend is the medicine of life</b></h3>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img height="1000" width="1000" src="{% static 'allopathy/img/alo3.jpg' %}" alt="Unsplashed background img 3"></div>
+  </div>
+
+  
+
+   <!-- Footer -->
+   <footer class="footer-distributed">
+
+      <div class="footer-left">
+
+        <h3>Med<span>World</span></h3>
+
+        <p class="footer-links">
+          <a href="index11.html">Home</a>
+          
+          <a href="aboutUs.html">About</a>
+          
+          <a href="contact.html">Contact</a>
+        </p>
+
+        <p class="footer-company-name">MedWorld <br>&copy; Shamit Lal, Shivam Duggal, Rohit Sharma 2016</p>
+      </div>
+    <div class="footer-center">
+
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>Delhi Technological University</span> Delhi, India</p>
+        </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+91 9717127722</p>
+        </div>
+
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:support@company.com">supportmedworld@gmail.com</a></p>
+        </div>
+
+    </div>
+    <div class="footer-right">
+
+        <p class="footer-company-about">
+          <span>Reach Us</span>
+          
+        </p>
+
+        <div class="footer-icons">
+
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-github"></i></a>
+
+        </div>
+
+    </div>
+    </footer><!-- End Footer -->
+  <!--  Scripts-->
+
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{% static 'allopathy/js1/jquery.js' %}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'allopathy/js1/bootstrap.min.js' %}"></script>
+    <script src="{% static 'allopathy/js1/bootshape.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'allopathy/js/materialize.js' %}"></script>
+  <script src="{% static 'allopathy/js/init.js' %}"></script>
+
+
+  </body>
+</html>
